@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL编辑器</title>
+    <link rel="stylesheet" href="css/codemirror.css" />
+    <link rel="stylesheet" href="test/addon/fold/foldgutter.css">
+    <link rel="stylesheet" href="css/theme/dracula.css" />
+    <link rel="stylesheet" href="css/show-hint.css" />
+    <link rel="stylesheet" href="js/jquery-easyui/themes/default/easyui.css">
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+    
+    <link rel="stylesheet" href="css/index.css" />
+    <script type="text/javascript">
+        var baseUrl ="";
+        //var baseUrl = "https://www.easy-mock.com/mock/5cdd370d2835327c57e2e575/test/";
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="js/editor/codemirror.js"></script>
+    <script type="text/javascript" src="test/addon/fold/foldcode.js"></script>
+    <script type="text/javascript" src="test/addon/fold/foldgutter.js"></script>
+    <script type="text/javascript" src="test/addon/fold/comment-fold.js"></script>
+    <script type="text/javascript" src="test/addon/fold/matchbrackets.js"></script>
+    <script type="text/javascript" src="js/editor/sublime.js"></script>
+    <script type="text/javascript" src="js/editor/sql.js"></script>
+    <script type="text/javascript" src="js/editor/sql-hint.js"></script>
+    <script type="text/javascript" src="js/editor/show-hint.js"></script>
+    <script type="text/javascript" src="js/editor/formatting.js"></script>
+    <script type="text/javascript" src="js/editor/sql-formatter.min.js"></script>
+    <script type="text/javascript" src="js/layui/layui.js"></script>
+</head>
+<body>
+    <div class="layui-container" >
+
+        <div class="layui-row">
+            <div class="card left-card">
+                <div class="tree-div">
+                    <ul id="dstable"  fit="true" border="false"></ul>
+                </div>
+            </div>
+            <div class="layui-col-xs9 card right-card">
+                <div class="layui-row tools">
+                        <button class="layui-btn layui-btn-primary  layui-btn-xs" id="save">
+                            <img src="image/save.png" alt="">保存</button>
+                        <button class="layui-btn layui-btn-primary  layui-btn-xs" id='format'>
+                                <img src="image/format.png" alt="">美化SQL</button>
+                        <button class="layui-btn layui-btn-primary  layui-btn-xs" id='execute'>
+                            <img src="image/run.png" alt="">执行</button>
+                        <button class="layui-btn layui-btn-primary  layui-btn-xs" id='stop' onclick="stopLoadData()">
+                            <img id="stopImg" src="image/stop0.png" alt="">停止</button>
+                </div>
+                <div class="layui-row sql-div">
+                    <textarea id="code"></textarea>
+                    <!-- 负责拖拽 -->
+                    <div id="handle" style="display: none"> </div>
+    
+                </div>
+                <div class="layui-row data-div">
+                    <div class="layui-tab h100" style="display: none"  lay-filter="result">
+                        <ul class="layui-tab-title">
+                            <li lay-id="info" >信息</li>
+                            <li class="layui-this" lay-id="data" >结果
+                                <img id="loading" style="display: none" src="js/jquery-easyui/themes/default/images/loading.gif" alt="">
+                            </li>
+                        </ul>
+                        <div class="layui-tab-content h100">
+    
+                            <div class="layui-tab-item data-info h100">
+                                <p id="resultCode"></p>
+                                <p id="resultMsg"></p>
+                                <p id="resultTime"></p>
+                            </div>
+                            <div class="layui-tab-item layui-show data-list h100">
+                                <table id="sqldata"></table>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <div id="save_div" style="display: none;" >
+        <div class="layui-form" >
+            <div class="layui-form-item">
+                <label class="layui-form-label">分析名称：</label>
+                <div class="layui-input-inline">
+                    <input type="hidden" name="ghBh">
+                    <input type="text" name="name" placeholder="请输入"  autocomplete="off" class="layui-input">
+                </div>
+                <span style="color: red;position: relative;top: 15px;">*</span>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">分析描述：</label>
+                <div class="layui-input-inline">
+                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

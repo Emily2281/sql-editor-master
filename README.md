@@ -15,11 +15,11 @@
 
 ### 涉及接口
 1. 关键词接口 (./js/editor/sql.js)
-![pic_101](pic/pic_101.png)
+![pic_101](https://github.com/Emily2281/sql-editor-master/blob/master/pic/pic_101.png)
 2. 左侧表，树结构接口 (./js/index.js)
-![pic_102](pic/pic_102.png)
+![pic_102](https://github.com/Emily2281/sql-editor-master/blob/master/pic/pic_102.png)
 3. sql 执行查询接口（./js/index.js，不提供后台实现，使用者可自定义）
-![pic_103](pic/pic_103.png)
+![pic_103](https://github.com/Emily2281/sql-editor-master/blob/master/pic/pic_103.png)
 ### 功能更新
    - 左侧提供数据库表字段树形结构，可拖拽到sql编辑框。(2019-7-19新增)
    - 编辑区和数据展示区上下拖动更改大小。(2019-7-19新增)
@@ -29,8 +29,8 @@
 
 ### 一些截图： 
 
-![pic_01](pic/pic_01.png )
+![pic_01](https://github.com/Emily2281/sql-editor-master/blob/master/pic/pic_01.png )
 
-![pic_02](pic/pic_02.png)
+![pic_02](https://github.com/Emily2281/sql-editor-master/blob/master/pic/pic_02.png)
 
-![pic_03](pic/pic_03.png)
+![pic_03](https://github.com/Emily2281/sql-editor-master/blob/master/pic/pic_03.png)
